@@ -1,46 +1,47 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ErrorDialogComponent } from './component/error-dialog/error-dialog.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { CategoriaPipe } from './pipes/categoria.pipe';
+import { RouterModule } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
-const angularModules: any = [
-  CommonModule,
-  RouterModule
-];
-const materialModules: any= [
-  MatToolbarModule,
-  MatTableModule,
-  MatDialogModule,
-  MatProgressSpinnerModule,
-  MatCardModule,
+import { ErrorDialogComponent } from './component/error-dialog/error-dialog.component';
+import { CategoryPipe } from './pipes/category.pipe';
+
+const angularModules: any = [CommonModule, RouterModule];
+
+const materialModules: any = [
   MatButtonModule,
-  MatIconModule
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSnackBarModule,
+  MatTableModule,
+  MatToolbarModule,
+  MatTooltipModule,
 ];
 
 @NgModule({
-  declarations: [
-    ErrorDialogComponent,
-    CategoriaPipe
-  ],
-  imports: [
-    CommonModule,
-    angularModules,
-    materialModules
-  ],
+  declarations: [ErrorDialogComponent, CategoryPipe],
+  imports: [CommonModule, angularModules, materialModules],
   exports: [
     angularModules,
     materialModules,
     ErrorDialogComponent,
-    CategoriaPipe
-  ]
+    CategoryPipe,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
